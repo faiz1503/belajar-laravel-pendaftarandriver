@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -11,7 +12,7 @@
     <main role="main" class="container">
 
       <div class="starter-template">
-        <h1>Halaman Utama Driver</h1>
+        <h1>Halaman Utama Merchant Food</h1>
         <p class="lead">Silahkan Lengkapi Profil Anda Terlebih Dahulu.<br></p>
       </div>
 
@@ -19,8 +20,8 @@
         <div class="col-12 .col-md-8">
             <ul class="list-group">
                 <li class="list-group-item" style="display: flex; justify-content: center;">
-                    <a href="/editktp/{{Auth::id()}}" class="badge badge-primary">Masukkan KTP</a>
-                    <?php if (!empty( Auth::user()->ktp)) {
+                    <a href="/editsuratperusahaan/{{Auth::id()}}" class="badge badge-primary">Masukkan Surat Perusahaan</a>
+                    <?php if (!empty( Auth::user()->suratperusahaan)) {
                         echo "  <span class='badge badge-pill badge-success'>Data Sudah dimasukkan</span>";
                     } else {
                         echo "  <span class='badge badge-pill badge-warning'>Data belum dimasukkan</span>";
@@ -28,8 +29,8 @@
                     ?>
                 </li>
                 <li class="list-group-item" style="display: flex; justify-content: center;">
-                    <a href="/editsim/{{Auth::id()}}" class="badge badge-primary">Masukkan SIM</a>
-                    <?php if (!empty( Auth::user()->sim)) {
+                    <a href="/editsuratdirektur/{{Auth::id()}}" class="badge badge-primary">Masukkan Surat Direktur</a>
+                    <?php if (!empty( Auth::user()->suratdirektur)) {
                         echo "  <span class='badge badge-pill badge-success'>Data Sudah dimasukkan</span>";
                     } else {
                         echo "  <span class='badge badge-pill badge-warning'>Data belum dimasukkan</span>";
@@ -37,8 +38,8 @@
                     ?>
                 </li>
                 <li class="list-group-item" style="display: flex; justify-content: center;">
-                    <a href="/editstnk/{{Auth::id()}}" class="badge badge-primary">Masukkan STNK</a>
-                    <?php if (!empty( Auth::user()->stnk)) {
+                    <a href="/editsuratpenanggungjawab/{{Auth::id()}}" class="badge badge-primary">Masukkan Surat Penanggung Jawab</a>
+                    <?php if (!empty( Auth::user()->suratpenanggungjawab)) {
                         echo "  <span class='badge badge-pill badge-success'>Data Sudah dimasukkan</span>";
                     } else {
                         echo "  <span class='badge badge-pill badge-warning'>Data belum dimasukkan</span>";
@@ -46,17 +47,8 @@
                     ?>
                 </li>
                 <li class="list-group-item" style="display: flex; justify-content: center;">
-                    <a href="/editskck/{{Auth::id()}}" class="badge badge-primary">Masukkan SKCK</a>
-                    <?php if (!empty( Auth::user()->skck)) {
-                        echo "  <span class='badge badge-pill badge-success'>Data Sudah dimasukkan</span>";
-                    } else {
-                        echo "  <span class='badge badge-pill badge-warning'>Data belum dimasukkan</span>";
-                    }
-                    ?>
-                </li>
-                <li class="list-group-item" style="display: flex; justify-content: center;">
-                    <a href="/editsuratkesehatan/{{Auth::id()}}" class="badge badge-primary">Masukkan Surat Kesehatan</a>
-                    <?php if (!empty( Auth::user()->suratkesehatan)) {
+                    <a href="/editsuratpembayaran/{{Auth::id()}}" class="badge badge-primary">Masukkan Surat Pembayaran</a>
+                    <?php if (!empty( Auth::user()->suratpembayaran)) {
                         echo "  <span class='badge badge-pill badge-success'>Data Sudah dimasukkan</span>";
                     } else {
                         echo "  <span class='badge badge-pill badge-warning'>Data belum dimasukkan</span>";

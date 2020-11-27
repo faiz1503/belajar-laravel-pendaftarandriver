@@ -22,7 +22,7 @@ Route::group(['middleware' => 'auth'], function () {
 
 });
 
-Route::get('/login', 'DriverController@login')->name('login');
+Route::get('/login', 'DriverController@login')->name('login_driver');
 Route::post('/loginPost', 'DriverController@loginPost');
 
 Route::get('/register', 'DriverController@register')->name('register');
@@ -42,3 +42,35 @@ Route::post('/editskck/update','DriverController@updateskck');
 
 Route::get('/editsuratkesehatan/{id}', 'DriverController@editsuratkesehatan');
 Route::post('/editsuratkesehatan/update','DriverController@updatesuratkesehatan');
+
+
+Route::get('/menu', function() {
+    return view('menu');
+});
+
+
+Route::group(['middleware' => 'auth'], function () {
+
+    Route::get('/index_food', 'FoodController@show')->name('index_food');
+    Route::get('/logout_food', 'FoodController@logout_food');
+
+});
+
+Route::get('/daftar_food', 'FoodController@index')->name('daftar_food');
+Route::post('/foodPost', 'FoodController@store');
+
+Route::get('/login_food', 'FoodController@login')->name('login_food');
+Route::post('/loginPost', 'FoodController@loginPost');
+
+Route::get('/editsuratperusahaan/{id}', 'FoodController@editsuratperusahaan');
+Route::post('/editsuratperusahaan/update','FoodController@updatesuratperusahaan');
+
+Route::get('/editsuratdirektur/{id}', 'FoodController@editsuratdirektur');
+Route::post('/editsuratdirektur/update','FoodController@updatesuratdirektur');
+
+Route::get('/editsuratpenanggungjawab/{id}', 'FoodController@editsuratpenanggungjawab');
+Route::post('/editsuratpenanggungjawab/update','FoodController@updatesuratpenanggungjawab');
+
+Route::get('/editsuratpembayaran/{id}', 'FoodController@editsuratpembayaran');
+Route::post('/editsuratpembayaran/update','FoodController@updatesuratpembayaran');
+
